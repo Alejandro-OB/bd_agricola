@@ -17,31 +17,48 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (mysqli_num_rows($resultado) == 1) {
         // Almacenar el nombre de usuario en la sesión
         $_SESSION['username'] = $username;
+        setcookie('prueba_cookie',$username,time() + (86400 * 30));
         header("Location: index.php"); // Redirigir al index
         exit();
     } else {
         $error = "Usuario o contraseña incorrectos.";
     }
+} 
+
+if(isset($_COOKIE['prueba_cookie'])){
+    $_COOKIE['prueba_cookie'];
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-</head>
-<body>
-    <h2>Iniciar Sesión</h2>
-    <?php if (isset($error)) { echo "<p style='color: red;'>$error</p>"; } ?>
-    <form method="POST" action="login.php">
-        <label for="username">Usuario:</label><br>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Contraseña:</label><br>
-        <input type="password" id="password" name="password" required><br>
-        <button type="submit">Iniciar Sesión</button>
-    </form>
-</body>
-</html>
+<?php include ("includes/header.php")?>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header text-white text-center" style="background-color: #56bd31;">
+                    <h2>Iniciar Sesión</h2>
+                </div>
+                <div class="card-body" style="background-color: #f0ffe0;">
+                    <?php if (isset($error)) { ?>
+                        <div class="alert alert-danger" role="alert">
+                            <?php echo $error; ?>
+                        </div>
+                    <?php } ?>
+                    <form method="POST" action="login.php">
+                        <div class="form-group">
+                            <label for="username">Usuario:</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña:</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn text-white w-100" style="background-color: #328a12;">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php include ("includes/footer.php") ?>
