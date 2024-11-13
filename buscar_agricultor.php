@@ -18,7 +18,7 @@ if (isset($_GET['nombre'])) {
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow-sm">
-                    <div class="card-header text-white" style="background-color: #76c893;">
+                    <div class="card-header text-white" style="background-color: #56bd31;">
                         <h3 class="text-center mb-0">Resultados de la Búsqueda para "<?php echo $nombre; ?>"</h3>
                     </div>
                     <div class="card-body" style="background-color: #f0ffe0;">
