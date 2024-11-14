@@ -19,11 +19,27 @@
             <span class="title-bold">CULTIVO</span>
             <span class="title-italic">en red</span>
         </a>
+        <!-- Botones de consulta añadidos -->
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="consulta1.php">Consulta 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="consulta2.php">Consulta 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="consulta3.php">Consulta 3</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Botón de Cerrar sesión -->
         <div class="collapse navbar-collapse justify-content-end">
             <a href="logout.php" class="btn btn-outline-dark">Cerrar sesión</a>
         </div>
     </div>
 </nav>
+
 
 <style>
     .title-bold {
@@ -35,6 +51,6 @@
     font-style: italic;
     font-size: 1.2em;
     position: relative;
-    top: 5px; /* Ajusta la posición vertical para alinear con "CULTIVO" */
+    top: 5px; 
 }
 </style>
