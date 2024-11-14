@@ -19,7 +19,7 @@
             <span class="title-bold">CULTIVO</span>
             <span class="title-italic">en red</span>
         </a>
-        <!-- Botones de consulta añadidos -->
+        <!-- Botones de consulta-->
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">

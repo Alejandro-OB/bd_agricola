@@ -1,7 +1,6 @@
 <?php
-include('conexion_db.php'); // Incluye el archivo de conexión a la base de datos
+include('conexion_db.php'); 
 include("includes/header.php");
-// Cierra la etiqueta PHP aquí
 ?>
 
 
