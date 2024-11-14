@@ -1,6 +1,12 @@
 <?php
 include('conexion_db.php'); 
 include("includes/header.php");
+
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+    exit();
+}
 ?>
 
 <?php

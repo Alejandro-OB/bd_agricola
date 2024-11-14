@@ -1,24 +1,24 @@
 <?php
-// Iniciar la sesión
+
 session_start();
 
-// Incluir la conexión a la base de datos
+
 include('conexion_db.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Obtener los datos del formulario
+    
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-    // Consulta para verificar las credenciales
+    
     $query = "SELECT * FROM usuarios WHERE username = '$username' AND password = '$password'";
     $resultado = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($resultado) == 1) {
-        // Almacenar el nombre de usuario en la sesión
+        
         $_SESSION['username'] = $username;
         setcookie('prueba_cookie',$username,time() + (86400 * 30));
-        header("Location: index.php"); // Redirigir al index
+        header("Location: index.php"); 
         exit();
     } else {
         $error = "Usuario o contraseña incorrectos.";
